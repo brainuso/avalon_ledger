@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Test Page</title>
+
+  <script type="text/javascript"> <!--
+
+ var tabBody, row, cell;
+ function updateTable(){
+     tabBody=document.getElementById("editable");
+     row=document.createElement("tr");
+     cell = document.createElement("td");
+     cell.innerHTML=document.forms['leds'].elements[3].value;
+     row.appendChild(cell);
+     if(tabBody.childNodes.length==10)
+       tabBody.removeChild(tabBody.childNodes[0])
+     tabBody.appendChild(row);
+ }
+
+  // -->
+  </script>
+</head>
+<body>
+
+<h2>Change Our Lights:</h2>
+<!-- <form name="leds" id="ledSend" method="get" target="_blank" action="https://agent.electricimp.com/Fk43xPMkSrWF"> -->
+<form name="leds" id="ledSend" action="" onsubmit="return false;">
+Lamp Control: <input type="radio" name="led" value="0" checked />Off
+              <input type="radio" name="led" value="1" />On<br>
+How long should the Lights stay on? <input type="text" name="timer" value="10" />seconds<br>
+Your name? For Our Records <input id="name" type="text" name="user" placeholder="Your name here" /><br>
+<br>
+<input type="submit" value="Update!" onclick="updateTable();return false;"/>
+</form>
+
+<h1>Who has Changed Our Lights?</h1>
+
+<table border='1'>
+<thead><tr><th>This Could Be You</th></tr></thead>
+<tbody id="editable"></tbody>
+</table>
+
+</body>
+</html>

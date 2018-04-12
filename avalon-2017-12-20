@@ -1,0 +1,128 @@
+-- --------------------------------------------------------
+-- Host:                         127.0.0.1
+-- Server version:               10.1.10-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win32
+-- HeidiSQL Version:             9.5.0.5196
+-- --------------------------------------------------------
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+-- Dumping data for table avalon.admin: ~1 rows (approximately)
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` (`ID`, `name`, `password`) VALUES
+	(1, 'Richard', 'e32bc8cc6865c99e8dc6e389819ad2e3');
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+
+-- Dumping data for table avalon.coupon: ~1 rows (approximately)
+/*!40000 ALTER TABLE `coupon` DISABLE KEYS */;
+INSERT INTO `coupon` (`id`, `coupon_code`, `value`, `date_created`, `status`) VALUES
+	(1, 'AV1818', 2000, '2016-12-01 12:41:45', 'ACTIVE');
+/*!40000 ALTER TABLE `coupon` ENABLE KEYS */;
+
+-- Dumping data for table avalon.creditor: ~0 rows (approximately)
+/*!40000 ALTER TABLE `creditor` DISABLE KEYS */;
+/*!40000 ALTER TABLE `creditor` ENABLE KEYS */;
+
+-- Dumping data for table avalon.customer: ~5 rows (approximately)
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` (`ID`, `customer_id`, `mgr_id`, `name`, `address`, `phone_num`, `email`, `state`, `customer_type`) VALUES
+	(1, '112872ee23q', '455r67yigvv8', 'Xyz Enterprises', 'km 1, Idiroko Road, Ota', '09088456281', 'xyzenterprise@gmail.com', 'X', 'distributor'),
+	(2, '1225466455', '455r67yigvv8', 'Abc Ventures', '5, Industrial Estate, Ogun', '08184756234', 'abcventures@yahoo.com', 'X', 'distributor'),
+	(3, '9775445tg4', '455r67yigvv8', 'Lmn Business enterprises', '45, Morrison avenue, Yesi', '09777868979', 'lmnbiz@hotmail.com', 'X', 'distributor'),
+	(4, '343422367e', '86071464248f', 'Excel Business Ventures', '6/8 St. Pius Street, Yandev', '08062146682', 'excelbiz@gmail.com', 'Lagos', 'distributor'),
+	(5, '233685588a', '34345sdy575', 'DFGMoves', '41 Aiyetoro road, Lafenwa, Abeokuta', '08057797811', 'dfg@gmail.com', 'Ogun', 'distributor');
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+
+-- Dumping data for table avalon.inventory: ~3 rows (approximately)
+/*!40000 ALTER TABLE `inventory` DISABLE KEYS */;
+INSERT INTO `inventory` (`id`, `product_id`, `mgr_id`, `stock`, `price`, `stock_sold`, `stock_left`) VALUES
+	(1, '351726324424', '455r67yigvv8', 550, 3000, 500, 50),
+	(2, '2585284142f1', '455r67yigvv8', 639, 4000, 639, 0),
+	(3, '2387071833c6', '455r67yigvv8', 1000, 3050, 0, 1000);
+/*!40000 ALTER TABLE `inventory` ENABLE KEYS */;
+
+-- Dumping data for table avalon.location: ~37 rows (approximately)
+/*!40000 ALTER TABLE `location` DISABLE KEYS */;
+INSERT INTO `location` (`id`, `name`) VALUES
+	(1, 'Abuja'),
+	(2, 'Rivers'),
+	(3, 'Delta'),
+	(4, 'Lagos'),
+	(5, 'Ogun'),
+	(6, 'Akwa Ibom'),
+	(7, 'Bayelsa'),
+	(8, 'Cross River'),
+	(9, 'Edo'),
+	(10, 'Abia'),
+	(11, 'Imo'),
+	(12, 'Nasarawa'),
+	(13, 'Gombe'),
+	(14, 'Plateau'),
+	(15, 'Sokoto'),
+	(16, 'Ebonyi'),
+	(17, 'Enugu'),
+	(18, 'Adamawa'),
+	(19, 'Jigawa'),
+	(20, 'Bauchi'),
+	(21, 'Taraba'),
+	(22, 'Yobe'),
+	(23, 'Kwara'),
+	(24, 'Kogi'),
+	(25, 'Borno'),
+	(26, 'Benue'),
+	(27, 'Oyo'),
+	(28, 'Osun'),
+	(29, 'Ondo'),
+	(30, 'Ekiti'),
+	(31, 'Niger'),
+	(32, 'Anambra'),
+	(33, 'Kano'),
+	(34, 'Katsina'),
+	(35, 'Kebbi'),
+	(36, 'Kaduna'),
+	(37, 'Zamfara');
+/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+
+-- Dumping data for table avalon.manager: ~4 rows (approximately)
+/*!40000 ALTER TABLE `manager` DISABLE KEYS */;
+INSERT INTO `manager` (`ID`, `name`, `password`, `state`, `mgr_id`, `email`, `phone_num`, `address`) VALUES
+	(1, 'charles', 'e32bc8cc6865c99e8dc6e389819ad2e3', 'X', '455r67yigvv8', '', '', ''),
+	(2, 'segun', 'f1a02a8a9233e0da05508fa44bef53f1', 'Ogun', '34345sdy575', '', '', ''),
+	(3, 'ik Asuquo', '02f09468a62b861a3f21f689e977f6ec', 'Lagos', '86071464248f', 'mikethedude@Y.COM', '0809323433', '22 here'),
+	(4, 'usher guy', '786f2abe6c0a8b111ac545fc02dd3d02', 'Abia', '181852419dda', 'ibubuasbkxu@lmvdsk.vom', '0809323433', '34 coco');
+/*!40000 ALTER TABLE `manager` ENABLE KEYS */;
+
+-- Dumping data for table avalon.payment: ~0 rows (approximately)
+/*!40000 ALTER TABLE `payment` DISABLE KEYS */;
+/*!40000 ALTER TABLE `payment` ENABLE KEYS */;
+
+-- Dumping data for table avalon.product: ~3 rows (approximately)
+/*!40000 ALTER TABLE `product` DISABLE KEYS */;
+INSERT INTO `product` (`id`, `product_id`, `name`, `description`) VALUES
+	(1, '351726324424', 'Emulsion paint av98', 'Good for outer coating'),
+	(2, '2585284142f1', 'Spray paint AV34', 'For use on cars'),
+	(3, '2387071833c6', 'Primer', 'overlay');
+/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+
+-- Dumping data for table avalon.purchase: ~2 rows (approximately)
+/*!40000 ALTER TABLE `purchase` DISABLE KEYS */;
+INSERT INTO `purchase` (`id`, `purchase_id`, `product_id`, `customer_id`, `mgr_id`, `quantity`, `coupon_code`, `discount`, `price`, `total`, `date_purchased`) VALUES
+	(1, '687668060ca91e3', '351726324424', 2147483647, '455r67yigvv8', 12, 'AV1818', '2000', 3000, 34000, '2016-12-03 23:37:55'),
+	(2, '687668060ca91e3', '2585284142f1', 2147483647, '455r67yigvv8', 2, '0', '0', 4000, 8000, '2016-12-03 23:37:55');
+/*!40000 ALTER TABLE `purchase` ENABLE KEYS */;
+
+-- Dumping data for table avalon.temp_purchase: ~3 rows (approximately)
+/*!40000 ALTER TABLE `temp_purchase` DISABLE KEYS */;
+INSERT INTO `temp_purchase` (`id`, `mgr_id`, `product_id`, `qty`, `coupon_code`, `discount`, `price`, `total`) VALUES
+	(19, '455r67yigvv8', '351726324424', 12, 'AV1818', 2000, 3000, 34000),
+	(20, '455r67yigvv8', '2585284142f1', 2, '0', 0, 4000, 8000),
+	(21, '455r67yigvv8', '351726324424', 12, 'Av1818', 2000, 3000, 34000);
+/*!40000 ALTER TABLE `temp_purchase` ENABLE KEYS */;
+
+/*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
+/*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

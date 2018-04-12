@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Manage Customers | <?php include 'header.php';
+   //check if depot manager is logged in
+ if(empty($_SESSION['LoggedInMgr']) && empty($_SESSION['depot_mgr_name'])){
+	   //what to display if a depot manager is logged in
+	   //get list of distributors under the state managed by the logged in depot manager
+	     echo "<script>
+		location.href = 'index.php';
+   </script>";
+   }?>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Manager Page</h2>
+                        <hr />
+                        <a href="purchaseinvoice" type="button" class="btn btn-default">Cashier System</a>
+                        <br>
+                        <a href="deptmandist" type="button" class="btn btn-default">Manage Customers</a> 
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="col-md-6 pull-right">
+                    <div class="footer-content text-right">
+                        <p>&copy; 2016 <a href="http://cridl.com/">Cridl Computing</a></p>
+                    </div>
+                </div>
+                <div class="col-md-6 ">
+                    <div class="footer-content">
+                        <p>&copy; 2016 <a href="http:///">Avalon Paints</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>         
+        <!-- /container -->
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<title>SignUp: Personal Details</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    		<meta http-equiv="X-UA-Compatible" content="IE= edge">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/home.css">
+		
+		
+<!--[if lt IE 9]><html class="ie ieold" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
+<!--[if lt IE 10]><html class="ie ie9" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><![endif]-->
+<!--[if gt IE 9]><!-->
+
+</head>
+
+
+<body onload="locate()" class="" style="">
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+			<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<a href="../" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</a>
+							<h4 class="modal-title">Sign Up </h4>
+						</div>
+						<div class="modal-body">
+						<div class= "row">
+							<div class="col-lg-12">
+								<form name="signup" role="form" method="POST" action="signup.php">
+								<fieldset>
+								<div class="form-group">
+									<input class="form-control" required placeholder="Enter Username" name="username" id="username" type="text" value="<?php if(isset($username))echo $username;?>" onBlur="validateName()"> <div id="username-error"></div>
+									<?php if(isset($user_error))echo '<div class="fa fa-times text-warning">'. $user_error.'</div>';?>
+								</div>
+								<div class="form-group">
+									<input class="form-control" required placeholder="you@example.com" name="email" id="email" type="email" value="<?php if(isset($email))echo $email;?>" onBlur="validateEmail()"><div id="email-error"></div>
+									<?php if(isset($email_error))echo '<div class="fa fa-times text-warning">'. $email_error.'</div>';?>
+								</div>
+								<div class="form-group">
+									<input class="form-control" required placeholder="Password" name="password" id="password" type="password" value="" onBlur="validatePassword()"><div id="password-error"></div>
+									<?php if(isset($password_error))echo '<div class="fa fa-times text-warning">'. $password_error.'</div>';?>
+								</div>
+								<div class="form-group">
+									<input class="form-control" required placeholder="Re-enter Password " name="password2" id="password2" type="password" value="" onBlur="validatePassword()"><div id="password2-error"></div>
+									<?php if(isset($password_error))echo '<div class="fa fa-times text-warning">'. $password_error."</div><br/>";?>
+									<?php if(isset($password2_error))echo '<div class="fa fa-times text-warning">'. $password2_error.'</div>';?>
+								</div>
+								<div class="form-group">
+								
+									<select class="form-control" name="location" id="location" onchange="validateLocation()">
+										
+										
+										</select><div id="location-error"></div>
+									<?php if(isset($loc_error))echo '<div class="fa fa-times text-warning">'. $loc_error.'</div>';?>
+								</div>
+								<div class="pull-left">
+									
+									<label><input required type="checkbox" value="1" name="accept" id="accept" onblur="validateAccept()"/>
+										<strong> I accept that I have read MySkillDomain's <a href="../terms_conditions.html">Terms and Conditions</a> along
+										with the <a href="../privacy_policy.html">Privacy Policy</a></strong></label>
+										<div id="accept-error"></div>
+										
+										<?php if(isset($acc_error))echo '<div class="fa fa-times text-warning">'. $acc_error.'</div>';?>
+								</div>
+								<div class="modal-footer">
+								<input class="btn btn-primary"  type="submit" value="Register" >
+								</div>
+								</fieldset>
+								</form>
+							</div>	
+						</div>	
+						</div>
+					</div>
+				</div>	
+			
+			
+			
+			</div>
+		</div>
+	</div>	
+	
+ <script src="../js/jquery-1.10.2.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+	 <script src="../js/signvalidate.js"></script>
+	
+
+
+   
+   <script type="text/JavaScript">
+	
+
+//Modal
+document.getElementById("signup-btn").onclick = function(){openFunc()};
+//when user clicks button, open modal
+function openFunc(){
+document.getElementById('signup-modal').style.display ="block";
+}
+
+//close button
+document.getElementByClassName("close")[0].onclick = function(){closeFunc()};
+//closing modal
+function closeFunc(){
+document.getElementById('signup-modal').style.display ="none";
+	}
+	
+
+	  //ajax location call
+				function locate(){
+				
+			if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("location").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","locate.php",true);
+        xmlhttp.send();
+    					
+			}
+			
+	
+	
+</script>
+   
+	 
+</body>
+</html>
